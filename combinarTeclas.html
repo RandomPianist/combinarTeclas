@@ -1,0 +1,103 @@
+<script>
+/*
+===============================
+|NÃO COMERCIALIZE ESSE SCRIPT!|
+===============================
+
+COMBINAR TECLAS, por Reynolds Costa
+
+Esse script tem a finalidade de tornar possível o uso de sequências de teclas para executar funções.
+Para usá-lo, basta declarar um objeto combinarTeclas segundo a sintaxe:
+
+combinarTeclas = {
+	"funcao1(argumentos_da_funcao1)" : vetor com os códigos das teclas a serem apertadas para chamar a função 1
+	"funcao2(argumentos_da_funcao2)" : vetor com os códigos das teclas a serem apertadas para chamar a função 2
+	"funcao3(argumentos_da_funcao3)" : vetor com os códigos das teclas a serem apertadas para chamar a função 3
+	...
+};
+
+IMPORTANTE: É necessário declarar esse objeto ANTES da execução do código
+
+Para mais informações, veja o exemplo abaixo:
+*/
+
+//EXEMPLO - ÍNICIO
+combinarTeclas = { //Declaração do objeto
+	"oi()" : [17,13], //Ctrl+Enter executa oi()
+	"soma(1,2)" : [17,16,13], //Ctrl+Shift+Enter executa soma(1,2)
+	"console.log('oi')" : [16,17,13] //Shift+Ctrl+Enter executa console.log('oi')
+};
+
+//A função oi()
+function oi() {
+	alert("oi");
+}
+
+//A função soma
+function soma(a, b) {
+	alert(a + b);
+}
+//EXEMPLO - FIM
+
+//Esse script reserva para si as palavras-chave combinarTeclas e CombinarTeclas,
+//e reescreve as funções window.onkeydown e window.onkeyup
+
+//A partir daqui começa o CÓDIGO propriamente dito.
+//Alterá-lo é desnecessário para a maioria das funções comuns.
+//Não altere se não souber o que está fazendo.
+
+comandos = new CombinarTeclas(combinarTeclas);
+
+window.onkeydown = function() {
+	comandos.executarFuncao(event.keyCode);
+}
+
+window.onkeyup = function() {
+	comandos.retirar(event.keyCode);
+}
+
+function CombinarTeclas(obj) {
+	this.executarFuncao = function(code) {
+		for (var i = 0; i < num; i++) {
+			if (pressionados[i].indexOf(code) == -1) pressionados[i][pressionados[i].length] = code;
+			if (teclas[i].length == pressionados[i].length) {
+				var cont = 0;
+				for (var j = 0; j < teclas[i].length; j++) {
+					if (teclas[i][j] == pressionados[i][j]) cont++;
+				}
+				if (cont == teclas[i].length) {
+					this.inicializaPressionados();
+					var tmp = new Function(funcoes[i]);
+					tmp();
+				}
+			}
+		}
+	}
+	
+	this.retirar = function(code) {
+		for (var i = 0; i < num; i++) {
+			var aux = new Array();
+			for (var j = 0; j < pressionados[i].length; j++) {
+				if (pressionados[i][j] != code) aux[aux.length] = pressionados[i][j];
+			}
+			pressionados[i] = aux;
+		}
+	}
+	
+	this.inicializaPressionados = function() {
+		pressionados = new Array();
+		for (var i = 0; i < num; i++) pressionados[i] = new Array();
+	}
+	
+	var num = 0;
+	var teclas = new Array();
+	var funcoes = new Array();
+	var pressionados;
+	for (x in obj) {
+		funcoes[num] = x;
+		teclas[num] = obj[x];
+		num++;
+	}
+	this.inicializaPressionados();
+}
+</script>
