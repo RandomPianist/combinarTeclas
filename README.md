@@ -1,8 +1,4 @@
-===============================
-|NÃO COMERCIALIZE ESSE SCRIPT!|
-===============================
-
-COMBINAR TECLAS, por Reynolds Costa
+COMBINAR TECLAS
 
 Esse script tem a finalidade de tornar possível o uso de sequências de teclas para executar funções.
 Para usá-lo, basta declarar um objeto combinarTeclas segundo a sintaxe:
