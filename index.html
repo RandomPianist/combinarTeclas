@@ -1,0 +1,300 @@
+<!--
+COMBINAR TECLAS 2.0 © 2023
+Desenvolvido por Reynolds Costa, no Notepad++
+O uso é permitido; a comercialização, proibida.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Combinar Teclas</title>
+		<link rel = "stylesheet" type = "text/css" href = "https://randompianist.github.io/documentacao.css" />
+		<script type = "text/javascript" language = "JavaScript" src = "js/combinarTeclas2.0_main_mini.js"></script>
+		<script type = "text/javascript" language = "JavaScript" src = "js/combinarTeclas2.0_func.js"></script>
+		<script type = "text/javascript" language = "JavaScript" src = "js/exemplo.js"></script>
+	</head>
+	<body>
+		<div class = "bloco">
+			<h1>1. Introdução</h1>
+			<p>
+				<span>
+					================================
+					<br />
+					| NÃO COMERCIALIZE ESSE SCRIPT |
+					<br />
+					================================
+				</span>
+			</p>
+			<p>COMBINAR TECLAS 2.0, por Reynolds Costa</p>
+			<p>Essa biblioteca tem a finalidade de tornar possível o uso de sequências de teclas para executar funções.</p>
+		</div>
+		<hr />
+		<div class = "bloco">
+			<h1>2. Instalação</h1>
+			<p>
+				Para começar a usar essa biblioteca, copie os arquivos
+				<span class = "arquivo">combinarTeclas2.0_func.js</span>
+				e
+				<span class = "arquivo">combinarTeclas2.0_main_mini.js</span>*
+				na pasta
+				<span class = "pasta">js</span>
+				<a href="https://github.com/RandomPianist/combinarTeclas" class="repo_link" target="_blank">do presente repositório</a>
+				e faça conexões com eles no seu html usando o atributo
+				<span class = "HTML_atributo">src</span>
+				da tag
+				<span class = "HTML_tag">&#60;script&#62;</span>.
+			</p>
+			<p>A sua instalação deve se parecer com isso:</p>
+			<details>
+				<summary>Ver código</summary>
+				<div class = "codigo">
+					<div>
+						<p>
+							<span class = "HTML_tag">&#60;script</span>
+							<span class = "HTML_atributo">type</span>
+							=
+							<span class = "texto">"text/javascript"</span>
+							<span class = "HTML_atributo">language</span>
+							=
+							<span class = "texto">"JavaScript"</span>
+							<span class = "HTML_atributo">src</span>
+							=
+							<span class = "arquivo">"js/combinarTeclas2.0_main_mini.js"</span><span class = "HTML_tag">&#62;</span><span class = "HTML_tag">&#60;/script&#62;</span>
+						</p>
+						<p>
+							<span class = "HTML_tag">&#60;script</span>
+							<span class = "HTML_atributo">type</span>
+							=
+							<span class = "texto">"text/javascript"</span>
+							<span class = "HTML_atributo">language</span>
+							=
+							<span class = "texto">"JavaScript"</span>
+							<span class = "HTML_atributo">src</span>
+							=
+							<span class = "arquivo">"js/combinarTeclas2.0_main_func.js"</span><span class = "HTML_tag">&#62;</span><span class = "HTML_tag">&#60;/script&#62;</span>
+						</p>
+					</div>
+				</div>
+			</details>
+			<hr />
+			<table>
+				<tr>
+					<td class = "vtop">*</td>
+					<td class = "obs">
+						Não é necessário usar o arquivo
+						<span class = "arquivo">combinarTeclas2.0_main.js</span>,
+						mais pesado que sua contraparte minificada, disponível nesse repositório apenas para consulta e contribuição.
+					</td>
+				</tr>
+			</table>
+		</div>
+		<hr />
+		<div class = "bloco">
+			<h1>3. Utilização</h1>
+			<p>
+				Abaixo da conexão descrita no item anterior, basta instanciar a classe
+				<span class = "classe">CombinarTeclas</span>
+				em uma constante
+				<span class = "variavel">CT</span>
+				segundo a sintaxe abaixo. Mova o mouse sobre o trecho para saber mais.
+			</p>
+			<details>
+				<summary>Ver código</summary>
+				<div class = "codigo">
+					<div>
+						<p title = "Declaração da constante">
+							<span class = "JavaScript_reservado">const</span>
+							<span class = "variavel">CT</span>
+							=
+							<span class = "JavaScript_reservado">new</span>
+							<span class = "classe">CombinarTeclas</span>([
+						</p>
+						
+						<p class = "nivel1">
+							[<span title = "Vetor com os códigos das teclas a serem pressionadas para chamar a função 1">arr1</span>,
+							<span class = "JavaScript_reservado">function</span>
+							() {
+						</p>
+						<p class = "nivel2">
+							<span class = "comentario">// CÓDIGO DA FUNÇÃO 1
+						</p>
+						<p class = "nivel1">
+							}],
+						</p>
+						
+						<p class = "nivel1">
+							[<span title = "Vetor com os códigos das teclas a serem pressionadas para chamar a função 2">arr2</span>,
+							<span class = "JavaScript_reservado">function</span>
+							() {
+						</p>
+						<p class = "nivel2">
+							<span class = "comentario">// CÓDIGO DA FUNÇÃO 2
+						</p>
+						<p class = "nivel1">
+							}],
+						</p>
+						
+						<p class = "nivel1">
+							[<span title = "Vetor com os códigos das teclas a serem pressionadas para chamar a função 3">arr3</span>,
+							<span class = "JavaScript_reservado">function</span>
+							() {
+						</p>
+						<p class = "nivel2">
+							<span class = "comentario">// CÓDIGO DA FUNÇÃO 3
+						</p>
+						<p class = "nivel1">
+							}],
+						</p>
+						
+						<p class = "nivel1">
+							<span class = "comentario">// ETC
+						</p>
+						<p>
+							]);
+						</p>
+					</div>
+				</div>
+			</details>
+			<p>Observe o código de exemplo desta página:</p>
+			<details>
+				<summary>Ver código</summary>
+				<div class = "codigo">
+					<div>
+						<p>
+							<span class = "comentario">// ARQUIVO DE EXEMPLO
+						</p>
+						<p>&nbsp;</p>
+						<p>
+							<span class = "JavaScript_reservado">const</span>
+							<span class = "variavel">CT</span>
+							=
+							<span class = "JavaScript_reservado">new</span>
+							<span class = "classe">CombinarTeclas</span>([
+							<span class = "comentario">// Declaração do objeto
+						</p>
+						
+						<p class = "nivel1">
+							<span class = "comentario">// Ctrl+Enter chama a função ola();</span>
+						</p>
+						<p class = "nivel1">
+							[[<span class = "numero">17</span>,
+							<span class = "numero">13</span>],
+							<span class = "variavel">ola</span>],
+						</p>
+						
+						<p class = "nivel1">
+							<span class = "comentario">// Ctrl+Shift+Enter chama a função soma();
+						</p>
+						<p class = "nivel1">
+							[[<span class = "numero">17</span>,
+							<span class = "numero">16</span>,
+							<span class = "numero">13</span>],
+							<span class = "JavaScript_reservado">function</span>() {
+						</p>
+						<p class = "nivel2">
+							<span class = "JavaScript_funcao">alert</span>(<span class = "funcao">soma</span>([<span class = "numero">1</span>,<span class = "numero">2</span>]));
+							<span class = "comentario">// Exibe o resultado de soma([1, 2]);
+						</p>
+						<p class = "nivel1">
+							}]
+						</p>
+						
+						<p>
+							]);
+						</p>
+						
+						<p>&nbsp;</p>
+						<p>
+							<span class = "comentario">// A função ola()</span>
+						</p>
+						<p>
+							<span class = "JavaScript_reservado">function</span>
+							<span class = "funcao">ola</span>() {
+						</p>
+						<p class = "nivel1">
+							<span class = "JavaScript_funcao">alert</span>(<span class = "texto">"Olá, mundo!"</span>);
+						</p>
+						<p>
+							}
+						</p>
+						
+						<p>&nbsp;</p>
+						<p>
+							<span class = "comentario">// A função soma(parcelas)</span>
+						</p>
+						<p>
+							<span class = "JavaScript_reservado">function</span>
+							<span class = "funcao">soma</span>(<span class = "parametro">parcelas</span>) {
+						</p>
+						<p class = "nivel1">
+							<span class = "JavaScript_reservado">let</span>
+							<span class = "variavel">produto</span>
+							=
+							<span class = "numero">0</span>;
+						</p>
+						<p class = "nivel1">
+							<span class = "variavel">parcelas</span>.<span class = "JavaScript_funcao">forEach</span>((<span class = "variavel">parcela</span>)
+							=> {
+						</p>
+						<p class = "nivel2">
+							<span class = "variavel">produto</span>
+							+=
+							<span class = "variavel">parcela</span>
+						</p>
+						<p class = "nivel1">
+							});
+						</p>
+						<p class = "nivel1">
+							<span class = "JavaScript_reservado">return</span>
+							<span class = "variavel">produto</span>;
+						</p>
+						<p>
+							}
+						</p>
+					</div>
+				</div>
+			</details>
+		</div>
+		<hr />
+		<div class = "bloco">
+			<h1>4. Palavras reservadas</h1>
+			<p>Essa biblioteca reserva para si as palavras-chave:</p>
+			<ul>
+				<li>
+					<b>Como constante global:</b>
+					CT
+				</li>
+				<li>
+					<b>Como classe JavaScript:</b>
+					CombinarTeclas
+				</li>
+			</ul>
+			<p>E reescreve as funções:</p>
+			<ul>
+				<li>
+					<b>window.onkeydown</b>
+				</li>
+				<li>
+					<b>window.onkeyup</b>
+				</li>
+				<li>
+					<b>window.onload</b>
+				</li>
+			</ul>
+		</div>
+		<hr />
+		<div class = "bloco">
+			<h1>5. Alterações</h1>
+			<ul>
+				<li>Inclusão de validação de teclas</li>
+				<li>
+					Melhoria na escrita de funções, permissão de
+					<b>function</b>
+					em oposição ao anterior
+					<b>string</b>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
